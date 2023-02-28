@@ -13,6 +13,10 @@ public class Eagle extends Bird implements Fly {
         return altitude;
     }
 
+    public void setAltitude(int altitude) {
+        this.altitude = altitude;
+    }
+
     public boolean isFlying() {
         return flying;
     }
@@ -22,7 +26,7 @@ public class Eagle extends Bird implements Fly {
         return "Screech!";
     }
 
-    // @Override
+    
     public void takeOff(){
         if(!this.flying && this.altitude ==0){
             this.flying = true;
@@ -30,7 +34,7 @@ public class Eagle extends Bird implements Fly {
         }
     }
 
-    //  @Override
+    
     public int ascend(int meters) {
         if(this.flying){
             this.altitude = this.altitude + meters;
@@ -40,7 +44,7 @@ public class Eagle extends Bird implements Fly {
         return  this.altitude ;
     }
 
-    // @Override
+    
     public int descend(int meters) {
         if(this.flying){
             this.altitude = Math.max(this.altitude - meters,0);
@@ -49,14 +53,14 @@ public class Eagle extends Bird implements Fly {
         }
         return  this.altitude ;
     }
-    // @Override
+    
     public void glide(){
         if(this.flying){
             System.out.println("It glides into the air.");
         }
         
     }
-    // @Override
+    
     public void land(){
         if(this.flying && this.altitude <= 1){
             System.out.printf("%s lands on the ground.%n", this.getName());
